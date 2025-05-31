@@ -18,6 +18,7 @@ const captainSchema = new mongoose.Schema({
             required: true,
             unique: true,
             lowercase: true,
+            match: [/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, 'Please enter a valid email address']
     },
     password: {
         type: String,
@@ -54,7 +55,7 @@ const captainSchema = new mongoose.Schema({
             enum: ['car', 'motorcyle', 'auto']
         },
         location: {
-            lat: {
+            ltd: {
                 type: Number,
             },
             lng: {
@@ -77,4 +78,5 @@ captainSchema.statics.hashPassword = async function(password) {
     return await bcrypt.hash(password, 10);
 }
 
-module.exports = mongoose.model('captain', captainSchema);
+const captainModel = mongoose.model('captain', captainSchema);
+module.exports = captainModel;
