@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
     res.send('Hello World Ny me');
 })
 
-app.use('/users', userRoutes);7
+app.use('/users', userRoutes);
 app.use('/captains', captainRoutes);
 app.use('/maps', mapRoutes);
 app.use('/rides', rideRoutes);

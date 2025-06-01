@@ -12,7 +12,7 @@ Registers a new user by creating a user account with the provided information.
 
 ### Request Body
 
-The request body should be in JSON format and include the following fields:
+The request body should be in JSON format and included the following fields:
 
 - `fullname` (object):
   - `firstname` (string, required): User's first name (minimum 3 characters).
